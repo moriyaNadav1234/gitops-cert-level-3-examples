@@ -11,6 +11,7 @@ spec:
       github:
         owner: FinnianDempsey
         repo: gitops-cert-level-3-examples
+        label: preview-ready
       requeueAfterSeconds: 180
   template:
     metadata:
