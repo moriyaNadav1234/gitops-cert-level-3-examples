@@ -28,7 +28,7 @@ spec:
       
       # Destination cluster and namespace to deploy the application
       destination:
-        server: cluster-2
+        name: cluster-2
 
       # Sync policy
       syncPolicy:
