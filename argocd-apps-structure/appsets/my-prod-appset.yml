@@ -15,7 +15,7 @@ spec:
       - path: argocd-apps-structure/apps/*/envs/prod-eu      
   template:      
     metadata:
-      name: '{{index .path.segments 2}}-{{index .path.segments 4}}' 
+      name: '{{index .path.segments 2}}-{{index .path.segments 4}}'
     spec:
       # The project the application belongs to.
       project: default
