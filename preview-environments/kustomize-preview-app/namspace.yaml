@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata-name: preview-tmpenv
+    
+  name: preview-tmpenv
+spec:
+  finalizers:
+    - kubernetes
+
