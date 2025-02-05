@@ -25,23 +25,6 @@ spec:
         kustomize:
           images:
             - 'docker.io/marcpires/my-preview-app:{{.branch_slug}}'
-          # Mixes Argo and Kustomize manifests. NOT RECOMMENDED
-          # Get a better way to do it
-          patches:
-            - target:
-                kind: Deployment
-                name: simple-deployment
-              patch: |-
-                - op: replace
-                  path: /spec/template/spec/containers/0/env/0
-                  value:
-                    name: GIT_BRANCH
-                    value: '{{.branch_slug}}'
-                - op: replace
-                  path: /spec/template/spec/containers/0/env/1
-                  value:
-                    name: GIT_HASH
-                    value: '{{.head_short_sha_7}}'
       project: "default"
       destination:
         server: https://kubernetes.default.svc
