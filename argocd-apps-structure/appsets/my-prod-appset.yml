@@ -8,21 +8,21 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: https://github.com/codefresh-contrib/gitops-cert-level-3-examples.git
+      repoURL: https://github.com/delprofundo/gitops-cert-level-3-examples.git
       revision: HEAD
       directories:
       - path: argocd-apps-structure/apps/*/envs/prod-us
-      - path: argocd-apps-structure/apps/*/envs/prod-eu      
-  template:      
+      - path: argocd-apps-structure/apps/*/envs/prod-eu
+  template:
     metadata:
-      name: '{{index .path.segments 2}}-{{index .path.segments 4}}' 
+      name: '{{index .path.segments 2}}-{{index .path.segments 4}}'
     spec:
       # The project the application belongs to.
       project: default
 
       # Source of the application manifests
       source:
-        repoURL: https://github.com/codefresh-contrib/gitops-cert-level-3-examples.git
+        repoURL: https://github.com/delprofundo/gitops-cert-level-3-examples.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       
