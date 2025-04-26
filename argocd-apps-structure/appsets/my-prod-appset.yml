@@ -4,6 +4,8 @@ metadata:
   name: my-prod-appset
   namespace: argocd
 spec:
+  destination:
+    name: cluster-2
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
