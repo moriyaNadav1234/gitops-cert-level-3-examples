@@ -4,8 +4,6 @@ metadata:
   name: my-prod-appset
   namespace: argocd
 spec:
-  destination:
-    name: cluster-2
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
@@ -30,7 +28,7 @@ spec:
       
       # Destination cluster and namespace to deploy the application
       destination:
-        server: https://kubernetes.default.svc
+        name: cluster2
         namespace: '{{index .path.segments 2}}-{{index .path.segments 4}}'
 
       # Sync policy
