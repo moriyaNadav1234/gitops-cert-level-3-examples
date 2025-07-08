@@ -22,7 +22,7 @@ spec:
 
       # Source of the application manifests
       source:
-        repoURL:https://github.com/AdamCzepiel78/gitops-III.git
+        repoURL: https://github.com/AdamCzepiel78/gitops-III.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       
