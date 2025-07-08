@@ -9,15 +9,15 @@ spec:
   generators:
   - pullRequest:
       github:
-        owner: codefresh-contrib
-        repo: gitops-cert-level-3-examples
+        owner: AdamCzepiel78
+        repo: gitops-III
       requeueAfterSeconds: 180
   template:
     metadata:
       name: 'myapp-{{.branch}}'
     spec:
       source:
-        repoURL: 'https://github.com/codefresh-contrib/gitops-cert-level-3-examples.git'
+        repoURL: 'https://github.com/AdamCzepiel78/gitops-III.git'
         targetRevision: HEAD
         path: preview-environments/kustomize-preview-app/ 
         kustomize:
