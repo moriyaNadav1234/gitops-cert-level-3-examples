@@ -6,4 +6,4 @@ Take the certification yourself at [https://codefresh.io/courses/get-gitops-cert
 
 ## Testing Commits
 
-Good Commit
+Testing
