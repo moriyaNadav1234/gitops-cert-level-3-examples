@@ -2,19 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: my-preview-apps
-  namespace: argocd  
+  namespace: argocd
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - pullRequest:
-      github:
-        owner: moriyaNadav1234
-        repo: gitops-cert-level-3-examples
-      filters:
-        labels:
-          include: ["preview-ready"]
-      requeueAfterSeconds: 180
+    - pullRequest:
+        github:
+          owner: moriyaNadav1234
+          repo: gitops-cert-level-3-examples
+        filters:
+          labels:
+            include: ["preview-ready"]
+        requeueAfterSeconds: 180
   template:
     metadata:
       name: 'myapp-{{.branch}}'
@@ -22,7 +22,7 @@ spec:
       source:
         repoURL: 'https://github.com/moriyaNadav1234/gitops-cert-level-3-examples.git'
         targetRevision: HEAD
-        path: preview-environments/kustomize-preview-app/ 
+        path: preview-environments/kustomize-preview-app/
         kustomize:
           images:
             - 'docker.io/kostiscodefresh/my-preview-app:{{.branch_slug}}'
@@ -32,6 +32,6 @@ spec:
         namespace: 'preview-{{.branch_slug}}'
       syncPolicy:
         automated:
-          prune: true  
+          prune: true
         syncOptions:
-        - CreateNamespace=true
+          - CreateNamespace=true
