@@ -11,6 +11,7 @@ spec:
       github:
         owner: moriyaNadav1234
         repo: gitops-cert-level-3-examples
+      filters:
         labels:
           include: ["preview-ready"]
       requeueAfterSeconds: 180
@@ -33,4 +34,4 @@ spec:
         automated:
           prune: true  
         syncOptions:
-        - CreateNamespace=true 
+        - CreateNamespace=true
