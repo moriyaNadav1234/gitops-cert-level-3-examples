@@ -11,6 +11,8 @@ spec:
       github:
         owner: moriyaNadav1234
         repo: gitops-cert-level-3-examples
+        labels:
+          include: ["preview-ready"]
       requeueAfterSeconds: 180
   template:
     metadata:
